@@ -1,16 +1,19 @@
 
 package lab2p2_diegoordonez;
 
+import java.util.ArrayList;
 
-public class jugadores {
+
+public class jugador {
     private String nombre;
     private int cantidad;
     private double PR;
     private double dinero;
+    private ArrayList<Carro> carcan = new ArrayList();
     
-    public jugadores(){
+    public jugador(){
     }
-    public jugadores(String name, int can, double pr,double money){
+    public jugador(String name, int can, double pr,double money){
         this.nombre = name;
         this.cantidad = can;
         this.PR  = pr;
@@ -33,6 +36,10 @@ public class jugadores {
         return dinero;
     }
 
+    public ArrayList<Carro> getCarcan() {
+        return carcan;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -49,9 +56,13 @@ public class jugadores {
         this.dinero = dinero;
     }
 
-    @Override
+    public void setCarcan(ArrayList<Carro> carcan) {
+        this.carcan = carcan;
+    }
+
+   @Override
     public String toString() {
-        return "jugadores{" + "nombre=" + nombre + ", cantidad de carros=" + cantidad + ", Puntos de Reputacion=" + PR + ", dinero en el banco=" + dinero + '}';
+        return "Nombre: " + nombre + "\n Cantidad de Carros: " + cantidad + "\n Reputación: " + PR + "\n Dinero en cuenta: " + dinero;
     }
     
 }
